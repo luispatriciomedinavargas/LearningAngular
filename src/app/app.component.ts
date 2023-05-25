@@ -9,18 +9,19 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-//property
   public title:string = 'Hola mundo';
-  public counter:number = 19;
+//property
+// public counter:number = 19;
 
 
 // here is the method that you have in app.component.html, and angular knows it by reference because in the app.module.ts you have all reference there
 // and well also is the only method calls like its
-  increaseBy(value:number):void {
-  this.counter +=value;
- }
- resetCounter():void{
-  this.counter=10;
- }
+// increaseBy(value:number):void {
+// this.counter +=value;
+// }
+// resetCounter():void{
+// this.counter=10;
+// }
+
 
 }
