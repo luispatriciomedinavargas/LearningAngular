@@ -1,1 +1,38 @@
-<p>list works!</p>
+<h3>Listado de Heroes</h3>
+
+<!--
+so here the logic is the next, if deletedhero has not value it will go by else, right and them
+else scope we have a template defined call nothingWasDeleted, so it goes to <NG-TEMPLATE #nothingWasDeleted,
+you can see like a function where you call it. and execute the script that it has
+-->
+<div *ngIf="deletedHero else nothingWasDeleted"  >
+  <h3>Heroe borrado <small class="text-danger">{{deletedHero}}</small></h3>
+</div>
+ <!--
+ With <ng-template>, you can define template content that is only being rendered by Angular
+ when you, whether directly or indirectly, specifically instruct it to do so, allowing you to have full
+ control over how and when the content is displayed.
+-->
+<ng-template #nothingWasDeleted >
+  <h3 *ngIf="!deletedHero">No ha borrado nada</h3>
+</ng-template>
+
+
+
+<button
+*ngIf="heroNames.length > 0 "
+  (click)="removeLastHero()"
+class="btn btn-outline-danger">
+  Borrar ultimo heroe
+
+</button>
+
+
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of heroNames"
+   class="list-group-item">
+   {{name}}
+  </li>
+
+</ul>

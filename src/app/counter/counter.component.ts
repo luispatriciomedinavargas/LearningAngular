@@ -4,7 +4,6 @@ import { Component } from '@angular/core';
   // selector means how you want call your component, labels HTMLS
   selector: "app-counter",
   template: `
-  <h3>Counter from counter.componjents.ts: </h3>
   <h3>Counter from counter.componjents.ts: {{counter}} </h3>
 
 <button (click)="increaseBy(+1)">+1</button>
