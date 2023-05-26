@@ -10,8 +10,16 @@
    let isLast = last;
    let isEven = even;
    let isOdd = odd;
-   " class="list-group-item">
+   " class="list-group-item"
 
+    [ngClass]="{'list-group-item-success' : isLast,
+                'list-group-item-primary' : isEven
+
+  }">
+<!-- Lo que hace el NGCLASS es agregar clases de mandera condicional.
+    es que basado en la expresion (despues de :) hace una cosa u otra
+    se puede agregar una "," para tener mas de una condicion,
+-->
     <span class="text-primary">{{i }} </span>
 
     <span>{{character.name }}</span>
