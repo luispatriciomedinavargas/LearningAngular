@@ -1,12 +1,28 @@
 <h4>List</h4>
 <ul class="list-group">
-  <li *ngFor="let character of characterList" class="list-group-item">
 
-    <span>
-    {{character.name }}
-    </span>
-    -
-    <strong>Power </strong>
+  <!--index is already defined by our ngFor by default, first  is literally the frist element of our ngfor-->
+  <li *ngFor="let character of characterList;
+
+   let i = index;
+
+   let isFrist = first;
+   let isLast = last;
+   let isEven = even;
+   let isOdd = odd;
+   " class="list-group-item">
+
+    <span class="text-primary">{{i }} </span>
+
+    <span>{{character.name }}</span>
+
+    <strong> Power</strong>
+
     <span>{{character.power }}</span>
+    <br>
+    <!-- <span>es el primero: {{ isFrist }} - </span>
+    <span>es el ultimo: {{ isLast }}</span> -->
+    <span>Es par: {{isEven }} </span>
+    <span>Es inpar: {{isOdd }}</span>
   </li>
 </ul>
