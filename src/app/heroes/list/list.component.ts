@@ -18,3 +18,4 @@ export class ListComponent {
 }
 
 }
+console.log("test");
