@@ -6,11 +6,15 @@
     <!-- Here we are calling the property that we have in our component dbz-list with [] and in the equals we put the property
     that we can pass to our child
     -->
-    <dbz-list [characterList]="characters"></dbz-list>
+    <!-- Listen a event is with () -->
+
+    <!-- we pass the property that we make on our component -->
+    <dbz-list [characterList]="dbzService.characters"
+    (onDeleted)="dbzService.onDeltedCharacter($event)"
+    ></dbz-list>
   </div>
   <div class="col">
-
-    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+    <dbz-add-character (onNewCharacter)="dbzService.onNewCharacter($event)"></dbz-add-character>
   </div>
 
 </div>

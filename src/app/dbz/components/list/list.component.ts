@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 @Component({
@@ -7,12 +7,25 @@ import { Character } from '../../interfaces/character.interface';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-// with the decorator on a property we're making few things
-// the frist is that our ListComponent can be recibed a property call characterList
-// between () we can put an nickname to the property example @input("listCharacter")
+  // with the decorator on a property we're making few things
+  // the frist is that our ListComponent can be recibed a property call characterList
+  // between () we can put an nickname to the property example @input("listCharacter")
   @Input()
   public characterList: Character[] = [{
     name: "Trunks",
     power: 10
   }]
+  // with this property we can communicate with other components
+  @Output()
+  public onDeleted: EventEmitter<number>= new EventEmitter();
+
+onDeletedCharacterFromList(index:number): void {
+
+    this.onDeleted.emit(index);
+
+
+    //TODO: Emit the ID of Character
+  }
+
+
 }

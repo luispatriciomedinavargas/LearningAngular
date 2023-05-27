@@ -1,7 +1,7 @@
 <form class="row" (ngSubmit)="emitCharacter()" >
   <h4>Add Character</h4>
   <!-- this si call [()] box of banandas, and it is two ways data binding -->
-  |<input type="text"
+  <input type="text"
   [(ngModel)]="character.name"
   name="name"
   class="from-control mb-2"
@@ -16,5 +16,4 @@
   <button type="submit" class="btn btn-primary" >
     Add
   </button>
-  <pre>{{character | json}}</pre>
 </form>

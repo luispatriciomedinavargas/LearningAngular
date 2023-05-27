@@ -10,27 +10,31 @@
    let isLast = last;
    let isEven = even;
    let isOdd = odd;
-   " class="list-group-item"
-
-    [ngClass]="{'list-group-item-success' : isLast,
+   " class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{'list-group-item-success' : isLast,
                 'list-group-item-primary' : isEven
 
   }">
-<!-- Lo que hace el NGCLASS es agregar clases de mandera condicional.
-    es que basado en la expresion (despues de :) hace una cosa u otra
-    se puede agregar una "," para tener mas de una condicion,
+    <!-- what is does the  NGCLASS  depends on condition we can add class
+  what is base by the expression that is has (after :) do something.
+    also you can add "," to have multiple condition
 -->
-    <span class="text-primary">{{i }} </span>
+    <div>
 
-    <span>{{character.name }}</span>
+      <span class="text-primary">{{i }}. </span>
 
-    <strong> Power</strong>
+      <span>{{character.name }} - </span>
 
-    <span>{{character.power }}</span>
-    <br>
+      <strong> Power: </strong>
+
+      <span>{{character.power }}</span>
+      <br>
+    </div>
     <!-- <span>es el primero: {{ isFrist }} - </span>
-    <span>es el ultimo: {{ isLast }}</span> -->
-    <span>Es par: {{isEven }} </span>
-    <span>Es inpar: {{isOdd }}</span>
+      <span>es el ultimo: {{ isLast }}</span> -->
+    <!-- <span>Is Even: {{isEven }} </span>
+    <span>Is Odd: {{isOdd }}</span> -->
+    <button (click)="onDeletedCharacterFromList(i)"
+     class="btn btn-danger">X</button>
+
   </li>
 </ul>
