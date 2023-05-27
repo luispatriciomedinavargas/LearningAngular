@@ -10,7 +10,7 @@
 
     <!-- we pass the property that we make on our component -->
     <dbz-list [characterList]="dbzService.characters"
-    (onDeleted)="dbzService.onDeltedCharacter($event)"
+    (onDeleted)="dbzService.deletedCharacterById($event)"
     ></dbz-list>
   </div>
   <div class="col">

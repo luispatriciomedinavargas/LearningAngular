@@ -17,14 +17,11 @@ export class ListComponent {
   }]
   // with this property we can communicate with other components
   @Output()
-  public onDeleted: EventEmitter<number>= new EventEmitter();
+  public onDeleted: EventEmitter<string>= new EventEmitter();
 
-onDeletedCharacterFromList(index:number): void {
-
-    this.onDeleted.emit(index);
-
-
-    //TODO: Emit the ID of Character
+onDeletedCharacterFromList(id?:string): void {
+  if(!id) return
+    this.onDeleted.emit(id);
   }
 
 
