@@ -1,8 +1,20 @@
-<form class="row">
+<form class="row" (ngSubmit)="emitCharacter()" >
   <h4>Add Character</h4>
-  <input type="text" class="from-control mb-2" placeholder="Name">
-  <input type="number" class="from-control mb-2" placeholder="Power">
-  <button type="submit" class="btn btn-primary">
+  <!-- this si call [()] box of banandas, and it is two ways data binding -->
+  |<input type="text"
+  [(ngModel)]="character.name"
+  name="name"
+  class="from-control mb-2"
+  placeholder="Name">
+
+  <input type="number"
+  [(ngModel)]="character.power"
+  name="power"
+  class="from-control mb-2"
+  placeholder="Power">
+
+  <button type="submit" class="btn btn-primary" >
     Add
   </button>
+  <pre>{{character | json}}</pre>
 </form>
